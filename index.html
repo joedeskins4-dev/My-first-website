@@ -8,63 +8,82 @@
 <style>
 body{
   margin:0;
-  font-family:Arial, sans-serif;
-  background:#0f172a;
+  font-family:system-ui;
+  background:#0b1220;
   color:white;
+  scroll-behavior:smooth;
 }
 
-header{
-  text-align:center;
-  padding:60px 20px;
-  background:#1e293b;
-}
-
-h1{
-  margin-bottom:5px;
-}
-
-.profile-img{
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid white;
-  margin-top:15px;
-}
-
+/* NAV */
 nav{
+  position:sticky;
+  top:0;
   display:flex;
   justify-content:center;
   gap:20px;
   padding:15px;
   background:#111c33;
-  position:sticky;
-  top:0;
 }
 
 nav a{
   color:white;
   text-decoration:none;
-  font-weight:bold;
+  font-weight:600;
 }
 
-nav a:hover{
-  color:#38bdf8;
+nav a:hover{ color:#38bdf8; }
+
+/* HERO */
+header{
+  text-align:center;
+  padding:90px 20px;
+  background:#111c33;
 }
 
+header h1{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+header p{
+  color:#cbd5e1;
+  font-size:18px;
+}
+
+.profile-img{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid white;
+  margin-top:20px;
+  transition:0.3s;
+}
+
+.profile-img:hover{
+  transform:scale(1.05);
+}
+
+/* SECTIONS */
 section{
-  padding:50px 20px;
+  padding:70px 20px;
   text-align:center;
 }
 
-.card{
-  background:#1e293b;
-  max-width:600px;
-  margin:auto;
-  padding:20px;
-  border-radius:10px;
+h2{
+  margin-bottom:20px;
 }
 
+/* CARD */
+.card{
+  background:#111c33;
+  max-width:650px;
+  margin:auto;
+  padding:20px;
+  border-radius:12px;
+}
+
+/* PROJECTS */
 .projects{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -74,9 +93,24 @@ section{
 }
 
 .project{
-  background:#1e293b;
+  background:#111c33;
   padding:20px;
-  border-radius:10px;
+  border-radius:12px;
+  transition:0.3s;
+}
+
+.project:hover{
+  transform:translateY(-6px);
+  background:#16223f;
+}
+
+/* CONTACT */
+form{
+  max-width:500px;
+  margin:auto;
+  background:#111c33;
+  padding:20px;
+  border-radius:12px;
 }
 
 input,textarea{
@@ -104,10 +138,11 @@ button{
   margin-top:10px;
 }
 
+/* FOOTER */
 footer{
   text-align:center;
   padding:20px;
-  background:#1e293b;
+  background:#111c33;
   color:#cbd5e1;
 }
 </style>
@@ -122,45 +157,48 @@ footer{
   <a href="#contact">Contact</a>
 </nav>
 
+<!-- HERO -->
 <header id="home">
-  <h1>My Portfolio</h1>
-  <p>Web Developer • Builder • Learner</p>
+  <h1>Hi, I'm a Web Developer</h1>
+  <p>Building clean & modern websites step by step</p>
 
-  <!-- IMPORTANT: must be profile.JPG -->
   <img src="profile.JPG" class="profile-img" alt="Profile">
 </header>
 
+<!-- ABOUT -->
 <section id="about">
   <h2>About Me</h2>
   <div class="card">
-    I am learning web development and building real-world projects step by step.
-    I enjoy creating clean and responsive websites.
+    I am learning web development and building real-world projects.
+    I focus on clean design, responsive layouts, and practical coding skills.
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
-<h2>Projects</h2>
+<h2>My Projects</h2>
 
 <div class="projects">
 
   <div class="project">
-    <h3>Portfolio Site</h3>
-    <p>My personal website.</p>
+    <h3>Portfolio Website</h3>
+    <p>My personal developer website.</p>
   </div>
 
   <div class="project">
     <h3>GitHub Practice</h3>
-    <p>Learning how to manage repositories.</p>
+    <p>Learning how to manage code repositories.</p>
   </div>
 
   <div class="project">
-    <h3>Coming Soon</h3>
-    <p>More projects loading...</p>
+    <h3>Future App</h3>
+    <p>More advanced projects coming soon.</p>
   </div>
 
 </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
 <h2>Contact Me</h2>
 
@@ -190,10 +228,10 @@ form.addEventListener("submit", async (e)=>{
 
   const data = new FormData(form);
 
-  const res = await fetch("https://formspree.io/f/mlgzlday", {
+  const res = await fetch("https://formspree.io/f/mlgzlday",{
     method:"POST",
     body:data,
-    headers:{ Accept:"application/json" }
+    headers:{Accept:"application/json"}
   });
 
   if(res.ok){
