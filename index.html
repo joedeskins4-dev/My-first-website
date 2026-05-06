@@ -24,47 +24,48 @@ body.light {
 
 body {
   margin:0;
-  font-family:Arial, sans-serif;
+  font-family:system-ui, Arial, sans-serif;
   background:var(--bg);
   color:var(--text);
   transition:0.3s;
 }
 
-html { scroll-behavior:smooth; }
-
 /* NAV */
 nav {
   position:sticky;
   top:0;
-  background:var(--card);
   display:flex;
   justify-content:center;
-  gap:20px;
+  gap:25px;
   padding:15px;
+  background:var(--card);
+  z-index:1000;
 }
 
 nav a {
   color:var(--text);
   text-decoration:none;
-  font-weight:bold;
+  font-weight:600;
 }
 
-nav a:hover { color:var(--accent); }
+nav a:hover {
+  color:var(--accent);
+}
 
 .toggle {
   position:absolute;
   right:20px;
   background:var(--accent);
   border:none;
-  padding:6px 10px;
-  border-radius:5px;
+  padding:6px 12px;
+  border-radius:6px;
   cursor:pointer;
 }
 
 /* HEADER */
 header {
   text-align:center;
-  padding:60px 20px;
+  padding:70px 20px;
   background:var(--card);
 }
 
@@ -79,23 +80,28 @@ header {
 
 /* SECTIONS */
 section {
-  padding:60px 20px;
+  padding:70px 20px;
   text-align:center;
 }
 
-/* CARDS */
+h2 {
+  margin-bottom:20px;
+  font-size:28px;
+}
+
+/* CARD */
 .card {
   background:var(--card);
   padding:20px;
-  margin:20px auto;
-  max-width:600px;
+  max-width:650px;
+  margin:auto;
   border-radius:12px;
 }
 
 /* PROJECTS */
 .projects {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
   gap:20px;
   max-width:900px;
   margin:auto;
@@ -109,7 +115,7 @@ section {
 }
 
 .project:hover {
-  transform:scale(1.03);
+  transform:translateY(-6px);
 }
 
 /* CONTACT */
@@ -169,14 +175,14 @@ footer {
 <header id="home">
   <h1>My Portfolio</h1>
   <p>Web Developer in Training</p>
-  <img src="profile.JPG" alt="Profile Picture" class="profile-img">
+  <img src="profile.JPG" class="profile-img" alt="Profile">
 </header>
 
 <section id="about">
   <h2>About Me</h2>
   <div class="card">
     I am learning web development and building real-world projects step by step.
-    I enjoy creating clean, modern websites that actually work.
+    I enjoy creating clean, modern, and responsive websites.
   </div>
 </section>
 
@@ -184,20 +190,22 @@ footer {
 <h2>My Projects</h2>
 
 <div class="projects">
+
   <div class="project">
     <h3>Portfolio Website</h3>
-    <p>My personal responsive website.</p>
+    <p>My personal website built with HTML & CSS.</p>
   </div>
 
   <div class="project">
     <h3>GitHub Practice</h3>
-    <p>Learning how to manage repositories.</p>
+    <p>Learning how to upload and manage code.</p>
   </div>
 
   <div class="project">
     <h3>Future Project</h3>
     <p>More advanced builds coming soon.</p>
   </div>
+
 </div>
 </section>
 
@@ -207,7 +215,6 @@ footer {
 <div class="contact-box">
 
 <form id="contact-form">
-  <input type="hidden" name="_subject" value="New message from portfolio">
   <input type="text" name="name" placeholder="Your Name" required>
   <input type="email" name="email" placeholder="Your Email" required>
   <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
