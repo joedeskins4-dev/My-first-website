@@ -12,6 +12,7 @@
             background: linear-gradient(to right, #1f1c2c, #928dab);
             color: white;
             text-align: center;
+            scroll-behavior: smooth;
         }
 
         header {
@@ -23,14 +24,34 @@
             font-size: 40px;
         }
 
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
         main {
             background: white;
             color: #333;
             margin: 20px auto;
             padding: 30px;
-            max-width: 600px;
+            max-width: 700px;
             border-radius: 10px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        section {
+            margin-bottom: 40px;
         }
 
         button {
@@ -69,21 +90,43 @@
 <header>
     <h1>🚀 My First Website</h1>
     <p>Learning, building, and growing</p>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
 <main>
-    <h2>About Me</h2>
-    <p>
-        I'm learning web development and building real projects.
-        This is my first live website hosted online!
-    </p>
 
-    <h2>Try It</h2>
-    <p>Click the button below:</p>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I'm learning web development and building real projects.
+            This is my first live website hosted online using GitHub Pages!
+        </p>
+    </section>
 
-    <button onclick="showMessage()">Click Me</button>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <p>This is my first project. More coming soon…</p>
+    </section>
 
-    <p id="message"></p>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: your@email.com</p>
+    </section>
+
+    <section>
+        <h2>Try It</h2>
+        <p>Click the button below:</p>
+
+        <button onclick="showMessage()">Click Me</button>
+
+        <p id="message"></p>
+    </section>
+
 </main>
 
 <footer>
