@@ -24,13 +24,15 @@ body.light {
 
 body {
   margin:0;
-  font-family:Arial;
+  font-family:Arial, sans-serif;
   background:var(--bg);
   color:var(--text);
   transition:0.3s;
 }
 
-html { scroll-behavior:smooth; }
+html {
+  scroll-behavior:smooth;
+}
 
 /* NAV */
 nav {
@@ -41,6 +43,7 @@ nav {
   justify-content:center;
   gap:20px;
   padding:15px;
+  z-index:1000;
 }
 
 nav a {
@@ -49,7 +52,9 @@ nav a {
   font-weight:bold;
 }
 
-nav a:hover { color:var(--accent); }
+nav a:hover {
+  color:var(--accent);
+}
 
 .toggle {
   position:absolute;
@@ -75,6 +80,14 @@ header {
   object-fit:cover;
   border:3px solid var(--text);
   margin-top:20px;
+}
+
+h1 {
+  margin:10px 0;
+}
+
+p {
+  color:var(--muted);
 }
 
 /* SECTIONS */
@@ -107,11 +120,9 @@ section {
   border-radius:12px;
 }
 
-.project a {
-  display:inline-block;
-  margin-top:10px;
-  color:var(--accent);
-  text-decoration:none;
+.project:hover {
+  transform:scale(1.03);
+  transition:0.3s;
 }
 
 /* CONTACT */
@@ -142,6 +153,7 @@ button {
   cursor:pointer;
 }
 
+/* FOOTER */
 footer {
   text-align:center;
   padding:20px;
@@ -168,7 +180,8 @@ footer {
   <h1>My Portfolio</h1>
   <p>Web Developer in Training</p>
 
-  <img src="profile.JPG" class="profile-img" alt="Profile">
+  <!-- PROFILE IMAGE -->
+  <img src="profile.JPG" alt="Profile Picture" class="profile-img">
 </header>
 
 <!-- ABOUT -->
@@ -188,20 +201,17 @@ footer {
 
   <div class="project">
     <h3>Portfolio Website</h3>
-    <p>My personal responsive website.</p>
-    <a href="#" target="_blank">View</a>
+    <p>My personal responsive website built with HTML & CSS.</p>
   </div>
 
   <div class="project">
     <h3>GitHub Practice</h3>
-    <p>Learning how to manage repositories.</p>
-    <a href="https://github.com/" target="_blank">GitHub</a>
+    <p>Learning how to upload and manage code on GitHub.</p>
   </div>
 
   <div class="project">
     <h3>Future Project</h3>
-    <p>More advanced builds coming soon.</p>
-    <a href="#">Coming soon</a>
+    <p>More projects coming soon.</p>
   </div>
 
 </div>
@@ -213,11 +223,12 @@ footer {
 
 <div class="contact-box">
 
-<!-- REAL WORKING FORM -->
-<form action="https://formspree.io/f/yourID" method="POST">
+<form action="https://formspree.io/f/mlgzlday" method="POST">
 
   <input type="text" name="name" placeholder="Your Name" required>
+
   <input type="email" name="email" placeholder="Your Email" required>
+
   <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
 
   <button type="submit">Send Message</button>
@@ -227,10 +238,12 @@ footer {
 </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
 © 2026 My Portfolio
 </footer>
 
+<!-- SCRIPT -->
 <script>
 function toggleMode() {
   document.body.classList.toggle("light");
