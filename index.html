@@ -6,69 +6,37 @@
 <title>My Portfolio</title>
 
 <style>
-:root{
-  --bg:#0b1220;
-  --card:#111c33;
-  --text:#ffffff;
-  --muted:#a9b4c7;
-  --accent:#38bdf8;
-}
-
-body.light{
-  --bg:#f4f7fb;
-  --card:#ffffff;
-  --text:#0b1220;
-  --muted:#4b5563;
-  --accent:#0284c7;
-}
-
 body{
   margin:0;
-  font-family:system-ui;
-  background:var(--bg);
-  color:var(--text);
-  transition:0.3s;
+  font-family:Arial, sans-serif;
+  background:#0f172a;
+  color:white;
 }
 
-/* NAV */
 nav{
   position:sticky;
   top:0;
+  background:#1e293b;
   display:flex;
   justify-content:center;
-  gap:18px;
+  gap:20px;
   padding:15px;
-  background:var(--card);
 }
 
 nav a{
-  color:var(--text);
+  color:white;
   text-decoration:none;
-  font-weight:600;
+  font-weight:bold;
 }
 
-nav a:hover{ color:var(--accent); }
-
-.toggle{
-  position:absolute;
-  right:20px;
-  background:var(--accent);
-  border:none;
-  padding:6px 12px;
-  border-radius:6px;
-  cursor:pointer;
+nav a:hover{
+  color:#38bdf8;
 }
 
-/* HERO */
 header{
   text-align:center;
-  padding:80px 20px;
-  background:var(--card);
-}
-
-h1{
-  font-size:38px;
-  margin-bottom:10px;
+  padding:70px 20px;
+  background:#1e293b;
 }
 
 .profile-img{
@@ -76,51 +44,35 @@ h1{
   height:150px;
   border-radius:50%;
   object-fit:cover;
-  border:3px solid var(--text);
-  margin-top:20px;
+  margin-top:15px;
+  border:3px solid white;
 }
 
-/* SECTIONS */
 section{
-  padding:70px 20px;
+  padding:60px 20px;
   text-align:center;
 }
 
 .card{
-  background:var(--card);
-  padding:20px;
-  max-width:650px;
+  background:#1e293b;
+  max-width:600px;
   margin:auto;
-  border-radius:12px;
+  padding:20px;
+  border-radius:10px;
 }
 
-/* PROJECTS */
 .projects{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:18px;
+  gap:20px;
   max-width:900px;
   margin:auto;
 }
 
 .project{
-  background:var(--card);
+  background:#1e293b;
   padding:20px;
-  border-radius:12px;
-  transition:0.3s;
-}
-
-.project:hover{
-  transform:translateY(-6px);
-}
-
-/* CONTACT */
-.contact-box{
-  max-width:500px;
-  margin:auto;
-  background:var(--card);
-  padding:20px;
-  border-radius:12px;
+  border-radius:10px;
 }
 
 input,textarea{
@@ -132,11 +84,11 @@ input,textarea{
 }
 
 button{
-  margin-top:10px;
   width:100%;
   padding:10px;
+  margin-top:10px;
   border:none;
-  background:var(--accent);
+  background:#38bdf8;
   font-weight:bold;
   border-radius:6px;
   cursor:pointer;
@@ -148,12 +100,11 @@ button{
   margin-top:10px;
 }
 
-/* FOOTER */
 footer{
   text-align:center;
   padding:20px;
-  background:var(--card);
-  color:var(--muted);
+  background:#1e293b;
+  color:#cbd5e1;
 }
 </style>
 </head>
@@ -165,21 +116,21 @@ footer{
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
-  <button class="toggle" onclick="toggle()">Mode</button>
 </nav>
 
 <header id="home">
   <h1>My Portfolio</h1>
-  <p>Web Developer in Training</p>
+  <p>Web Developer • Builder • Learner</p>
 
-  <!-- IMPORTANT: image must be in same folder -->
-  <img src="profile.JPG" class="profile-img" alt="Profile">
+  <!-- IMPORTANT: file must be profile.JPG -->
+  <img src="profile.JPG" class="profile-img">
 </header>
 
 <section id="about">
   <h2>About Me</h2>
   <div class="card">
     I am learning web development and building real-world projects step by step.
+    I enjoy creating clean and responsive websites.
   </div>
 </section>
 
@@ -189,8 +140,8 @@ footer{
 <div class="projects">
 
   <div class="project">
-    <h3>Portfolio Website</h3>
-    <p>Responsive personal site.</p>
+    <h3>Portfolio Site</h3>
+    <p>Modern responsive website.</p>
   </div>
 
   <div class="project">
@@ -199,8 +150,8 @@ footer{
   </div>
 
   <div class="project">
-    <h3>Future Project</h3>
-    <p>More coming soon.</p>
+    <h3>Coming Soon</h3>
+    <p>More advanced projects coming.</p>
   </div>
 
 </div>
@@ -209,18 +160,15 @@ footer{
 <section id="contact">
 <h2>Contact Me</h2>
 
-<div class="contact-box">
-
 <form id="form">
-  <input type="text" name="name" placeholder="Name" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <textarea name="message" rows="5" placeholder="Message" required></textarea>
-  <button type="submit">Send</button>
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
 </form>
 
-<div class="success" id="success">✅ Sent successfully!</div>
+<div class="success" id="success">✅ Message sent successfully!</div>
 
-</div>
 </section>
 
 <footer>
@@ -228,10 +176,6 @@ footer{
 </footer>
 
 <script>
-function toggle(){
-  document.body.classList.toggle("light");
-}
-
 const form = document.getElementById("form");
 const success = document.getElementById("success");
 
@@ -240,17 +184,17 @@ form.addEventListener("submit", async (e)=>{
 
   const data = new FormData(form);
 
-  const res = await fetch("https://formspree.io/f/mlgzlday",{
+  const res = await fetch("https://formspree.io/f/mlgzlday", {
     method:"POST",
     body:data,
-    headers:{Accept:"application/json"}
+    headers:{ Accept:"application/json" }
   });
 
   if(res.ok){
     success.style.display="block";
     form.reset();
   } else {
-    alert("Error sending message");
+    alert("Something went wrong");
   }
 });
 </script>
