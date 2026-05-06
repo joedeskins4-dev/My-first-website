@@ -6,22 +6,39 @@
   <title>My Portfolio</title>
 
   <style>
-    html {
-      scroll-behavior: smooth;
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #ffffff;
+      --muted: #cbd5e1;
+      --accent: #38bdf8;
+    }
+
+    body.light {
+      --bg: #f1f5f9;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #334155;
+      --accent: #0284c7;
     }
 
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
+      background: var(--bg);
+      color: var(--text);
+      transition: 0.3s;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     /* NAV */
     nav {
       position: sticky;
       top: 0;
-      background: #111827;
+      background: var(--card);
       display: flex;
       justify-content: center;
       gap: 20px;
@@ -30,20 +47,31 @@
     }
 
     nav a {
-      color: white;
+      color: var(--text);
       text-decoration: none;
       font-weight: bold;
     }
 
     nav a:hover {
-      color: #38bdf8;
+      color: var(--accent);
+    }
+
+    .toggle {
+      position: absolute;
+      right: 20px;
+      cursor: pointer;
+      background: var(--accent);
+      border: none;
+      padding: 6px 10px;
+      border-radius: 5px;
+      font-weight: bold;
     }
 
     /* HEADER */
     header {
       text-align: center;
       padding: 60px 20px;
-      background: #111827;
+      background: var(--card);
     }
 
     .profile-img {
@@ -51,7 +79,7 @@
       height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid white;
+      border: 3px solid var(--text);
       margin-top: 20px;
     }
 
@@ -60,24 +88,30 @@
     }
 
     p {
-      color: #cbd5e1;
+      color: var(--muted);
     }
 
-    /* SECTIONS */
     section {
       padding: 60px 20px;
       text-align: center;
     }
 
+    /* CARDS */
     .card {
-      background: #1e293b;
+      background: var(--card);
       padding: 20px;
       margin: 20px auto;
       max-width: 600px;
       border-radius: 12px;
       text-align: left;
+      transition: transform 0.3s;
     }
 
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* PROJECTS */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -87,16 +121,21 @@
     }
 
     .project {
-      background: #1e293b;
+      background: var(--card);
       padding: 20px;
       border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: scale(1.03);
     }
 
     /* CONTACT */
     .contact-box {
       max-width: 500px;
       margin: auto;
-      background: #1e293b;
+      background: var(--card);
       padding: 20px;
       border-radius: 12px;
     }
@@ -114,22 +153,18 @@
       padding: 10px;
       width: 100%;
       border: none;
-      background: #38bdf8;
+      background: var(--accent);
       color: black;
       font-weight: bold;
       border-radius: 6px;
       cursor: pointer;
     }
 
-    button:hover {
-      background: #0ea5e9;
-    }
-
     footer {
       text-align: center;
       padding: 20px;
-      background: #111827;
-      color: #94a3b8;
+      background: var(--card);
+      color: var(--muted);
     }
   </style>
 </head>
@@ -142,6 +177,8 @@
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
+
+    <button class="toggle" onclick="toggleMode()">Mode</button>
   </nav>
 
   <!-- HEADER -->
@@ -149,7 +186,7 @@
     <h1>My Portfolio</h1>
     <p>Welcome to my personal website</p>
 
-    <img src="profile.JPG" alt="Profile Picture" class="profile-img">
+    <img src="profile.JPG" class="profile-img" alt="Profile Picture">
   </header>
 
   <!-- ABOUT -->
@@ -158,7 +195,7 @@
     <div class="card">
       <p>
         I am learning web development and building real projects to improve my skills.
-        I enjoy creating clean, simple, and functional websites.
+        I enjoy creating clean, modern, and functional websites.
       </p>
     </div>
   </section>
@@ -170,17 +207,17 @@
     <div class="projects">
       <div class="project">
         <h3>Portfolio Website</h3>
-        <p>My personal website built using HTML and CSS.</p>
+        <p>My personal website built with HTML, CSS, and JavaScript.</p>
       </div>
 
       <div class="project">
         <h3>GitHub Practice</h3>
-        <p>Learning how to upload and manage code on GitHub.</p>
+        <p>Learning how to upload and manage projects on GitHub.</p>
       </div>
 
       <div class="project">
-        <h3>Future Project</h3>
-        <p>More projects coming soon as I improve my skills.</p>
+        <h3>Future Work</h3>
+        <p>More advanced projects coming soon.</p>
       </div>
     </div>
   </section>
@@ -190,20 +227,25 @@
     <h2>Contact Me</h2>
 
     <div class="contact-box">
-      <p>Send me a message:</p>
-
       <form action="mailto:yourname@email.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send</button>
       </form>
     </div>
   </section>
 
   <footer>
-    © 2026 My Portfolio. All rights reserved.
+    © 2026 My Portfolio
   </footer>
+
+  <!-- DARK/LIGHT MODE SCRIPT -->
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("light");
+    }
+  </script>
 
 </body>
 </html>
