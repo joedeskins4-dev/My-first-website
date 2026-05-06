@@ -13,14 +13,33 @@ body{
   color:white;
 }
 
-nav{
-  position:sticky;
-  top:0;
+header{
+  text-align:center;
+  padding:60px 20px;
   background:#1e293b;
+}
+
+h1{
+  margin-bottom:5px;
+}
+
+.profile-img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid white;
+  margin-top:15px;
+}
+
+nav{
   display:flex;
   justify-content:center;
   gap:20px;
   padding:15px;
+  background:#111c33;
+  position:sticky;
+  top:0;
 }
 
 nav a{
@@ -33,23 +52,8 @@ nav a:hover{
   color:#38bdf8;
 }
 
-header{
-  text-align:center;
-  padding:70px 20px;
-  background:#1e293b;
-}
-
-.profile-img{
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  object-fit:cover;
-  margin-top:15px;
-  border:3px solid white;
-}
-
 section{
-  padding:60px 20px;
+  padding:50px 20px;
   text-align:center;
 }
 
@@ -87,8 +91,8 @@ button{
   width:100%;
   padding:10px;
   margin-top:10px;
-  border:none;
   background:#38bdf8;
+  border:none;
   font-weight:bold;
   border-radius:6px;
   cursor:pointer;
@@ -122,8 +126,8 @@ footer{
   <h1>My Portfolio</h1>
   <p>Web Developer • Builder • Learner</p>
 
-  <!-- IMPORTANT: file must be profile.JPG -->
-  <img src="profile.JPG" class="profile-img">
+  <!-- IMPORTANT: must be profile.JPG -->
+  <img src="profile.JPG" class="profile-img" alt="Profile">
 </header>
 
 <section id="about">
@@ -141,17 +145,17 @@ footer{
 
   <div class="project">
     <h3>Portfolio Site</h3>
-    <p>Modern responsive website.</p>
+    <p>My personal website.</p>
   </div>
 
   <div class="project">
     <h3>GitHub Practice</h3>
-    <p>Learning repository management.</p>
+    <p>Learning how to manage repositories.</p>
   </div>
 
   <div class="project">
     <h3>Coming Soon</h3>
-    <p>More advanced projects coming.</p>
+    <p>More projects loading...</p>
   </div>
 
 </div>
@@ -167,7 +171,9 @@ footer{
   <button type="submit">Send Message</button>
 </form>
 
-<div class="success" id="success">✅ Message sent successfully!</div>
+<div class="success" id="success">
+  ✅ Message sent successfully!
+</div>
 
 </section>
 
@@ -194,7 +200,7 @@ form.addEventListener("submit", async (e)=>{
     success.style.display="block";
     form.reset();
   } else {
-    alert("Something went wrong");
+    alert("Message failed. Try again.");
   }
 });
 </script>
