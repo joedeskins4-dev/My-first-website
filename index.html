@@ -4,218 +4,493 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get a Website That Brings You Clients</title>
+<title>Freelance Web Developer</title>
+
+<meta name="description" content="Modern freelance web developer portfolio website">
 
 <style>
-body{
+*{
   margin:0;
-  font-family:system-ui;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, sans-serif;
   background:#0b1220;
   color:white;
+  line-height:1.6;
+}
+
+/* NAVBAR */
+nav{
+  position:sticky;
+  top:0;
+  background:#111c33;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:25px;
+  padding:18px;
+  z-index:1000;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#38bdf8;
 }
 
 /* HERO */
 header{
   text-align:center;
   padding:100px 20px;
-  background:#111c33;
+  background:linear-gradient(to bottom,#111c33,#0b1220);
 }
 
 header h1{
-  font-size:44px;
+  font-size:50px;
+  margin-bottom:15px;
 }
 
 header p{
-  max-width:600px;
+  max-width:650px;
   margin:auto;
   color:#cbd5e1;
+  font-size:18px;
 }
 
-.cta{
-  margin-top:20px;
+.profile-img{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid white;
+  margin-top:25px;
+  transition:0.3s;
+}
+
+.profile-img:hover{
+  transform:scale(1.05);
+}
+
+/* BUTTONS */
+.buttons{
+  margin-top:25px;
+}
+
+.btn{
   display:inline-block;
-  padding:12px 18px;
-  background:#38bdf8;
-  color:black;
-  font-weight:bold;
+  padding:12px 22px;
+  margin:10px;
   border-radius:8px;
   text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
 }
 
-/* NAV */
-nav{
-  position:sticky;
-  top:0;
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  padding:15px;
-  background:#111c33;
+.primary{
+  background:#38bdf8;
+  color:black;
 }
 
-nav a{
-  color:white;
-  text-decoration:none;
-  font-weight:600;
+.primary:hover{
+  background:#0ea5e9;
 }
 
-nav a:hover{ color:#38bdf8; }
+.secondary{
+  border:2px solid #38bdf8;
+  color:#38bdf8;
+}
+
+.secondary:hover{
+  background:#38bdf8;
+  color:black;
+}
 
 /* SECTIONS */
 section{
-  padding:70px 20px;
+  padding:80px 20px;
   text-align:center;
 }
 
-/* GRID */
-.grid{
+section h2{
+  font-size:36px;
+  margin-bottom:30px;
+}
+
+/* CARD */
+.card{
+  background:#111c33;
+  max-width:700px;
+  margin:auto;
+  padding:30px;
+  border-radius:15px;
+}
+
+/* SKILLS */
+.skills{
+  max-width:700px;
+  margin:auto;
+}
+
+.skill{
+  text-align:left;
+  margin:20px 0;
+}
+
+.bar{
+  width:100%;
+  background:#1e293b;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.fill{
+  padding:10px;
+  color:white;
+  font-size:14px;
+}
+
+.html{
+  width:90%;
+  background:#38bdf8;
+}
+
+.css{
+  width:85%;
+  background:#0ea5e9;
+}
+
+.js{
+  width:75%;
+  background:#0284c7;
+}
+
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.project{
+  background:#111c33;
+  border-radius:15px;
+  overflow:hidden;
+  transition:0.3s;
+}
+
+.project:hover{
+  transform:translateY(-6px);
+}
+
+.project img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.project-content{
+  padding:20px;
+}
+
+/* SERVICES */
+.services{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
-  max-width:900px;
+  max-width:1000px;
   margin:auto;
 }
 
-.box{
+.service{
   background:#111c33;
-  padding:20px;
-  border-radius:12px;
+  padding:25px;
+  border-radius:15px;
 }
 
-/* WHY ME */
-.highlight{
+/* TESTIMONIALS */
+.testimonial{
+  background:#111c33;
   max-width:700px;
-  margin:auto;
-  background:#111c33;
-  padding:20px;
-  border-radius:12px;
+  margin:15px auto;
+  padding:25px;
+  border-radius:15px;
+  font-style:italic;
 }
 
-/* FORM */
+/* CONTACT */
 form{
-  max-width:500px;
+  max-width:600px;
   margin:auto;
   background:#111c33;
-  padding:20px;
-  border-radius:12px;
+  padding:30px;
+  border-radius:15px;
 }
 
 input,textarea{
   width:100%;
-  padding:10px;
-  margin-top:10px;
+  padding:12px;
+  margin-top:12px;
   border:none;
-  border-radius:6px;
+  border-radius:8px;
 }
 
 button{
   width:100%;
-  padding:10px;
-  margin-top:10px;
+  padding:12px;
+  margin-top:15px;
   background:#38bdf8;
   border:none;
+  border-radius:8px;
   font-weight:bold;
-  border-radius:6px;
   cursor:pointer;
+}
+
+button:hover{
+  background:#0ea5e9;
 }
 
 .success{
   display:none;
   color:lightgreen;
-  margin-top:10px;
+  margin-top:15px;
 }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  background:#111c33;
-  color:#cbd5e1;
-}
-
-/* FLOAT BUTTON */
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:20px;
   right:20px;
   background:#25D366;
-  padding:12px 14px;
-  border-radius:50px;
   color:white;
+  padding:14px 16px;
+  border-radius:50px;
   text-decoration:none;
   font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  background:#111c33;
+  color:#cbd5e1;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+header h1{
+  font-size:38px;
+}
+
+nav{
+  flex-wrap:wrap;
+}
+
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
 <nav>
   <a href="#home">Home</a>
-  <a href="#services">What I Do</a>
-  <a href="#why">Why Me</a>
-  <a href="#contact">Get Website</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#services">Services</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#contact">Contact</a>
 </nav>
 
+<!-- HERO -->
 <header id="home">
-  <h1>I Build Websites That Help You Make Money</h1>
-  <p>If you need a business website, portfolio, or online presence that attracts customers — I can build it for you.</p>
 
-  <a class="cta" href="#contact">Get Your Website</a>
+<h1>I Build Websites That Grow Businesses</h1>
+
+<p>
+Modern freelance web developer creating responsive,
+professional and clean websites for businesses and personal brands.
+</p>
+
+<img src="profile.JPG" class="profile-img" alt="Profile Picture">
+
+<div class="buttons">
+  <a href="#contact" class="btn primary">Hire Me</a>
+  <a href="#projects" class="btn secondary">My Work</a>
+</div>
+
 </header>
 
+<!-- ABOUT -->
+<section id="about">
+
+<h2>About Me</h2>
+
+<div class="card">
+I am a freelance web developer passionate about creating
+modern, responsive and user-friendly websites.
+I focus on clean layouts, smooth user experience,
+and helping businesses build a stronger online presence.
+</div>
+
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="skills">
+
+<div class="skill">
+<p>HTML</p>
+<div class="bar">
+<div class="fill html">90%</div>
+</div>
+</div>
+
+<div class="skill">
+<p>CSS</p>
+<div class="bar">
+<div class="fill css">85%</div>
+</div>
+</div>
+
+<div class="skill">
+<p>JavaScript</p>
+<div class="bar">
+<div class="fill js">75%</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="projects">
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop">
+
+<div class="project-content">
+<h3>Business Website</h3>
+<p>Modern responsive business landing page.</p>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop">
+
+<div class="project-content">
+<h3>Portfolio Website</h3>
+<p>Professional personal portfolio design.</p>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop">
+
+<div class="project-content">
+<h3>Website Upgrade</h3>
+<p>Redesign and optimization project.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
 <section id="services">
-<h2>What I Offer</h2>
 
-<div class="grid">
+<h2>Services</h2>
 
-  <div class="box">
-    <h3>Business Website</h3>
-    <p>Show your services and get more customers online.</p>
-  </div>
+<div class="services">
 
-  <div class="box">
-    <h3>Portfolio Website</h3>
-    <p>Showcase your work and skills professionally.</p>
-  </div>
+<div class="service">
+<h3>Business Websites</h3>
+<p>Professional sites for businesses and brands.</p>
+</div>
 
-  <div class="box">
-    <h3>Fix / Upgrade</h3>
-    <p>Improve or fix your existing website.</p>
-  </div>
+<div class="service">
+<h3>Portfolio Websites</h3>
+<p>Show your work and skills professionally.</p>
+</div>
+
+<div class="service">
+<h3>Website Fixes</h3>
+<p>Improve, redesign or repair existing websites.</p>
+</div>
 
 </div>
+
 </section>
 
-<section id="why">
-<h2>Why Work With Me?</h2>
+<!-- REVIEWS -->
+<section id="reviews">
 
-<div class="highlight">
-✔ Clean modern design<br>
-✔ Mobile-friendly websites<br>
-✔ Fast delivery<br>
-✔ Affordable pricing<br>
-✔ Easy communication
+<h2>Client Reviews</h2>
+
+<div class="testimonial">
+"Excellent communication and very professional website design."
 </div>
+
+<div class="testimonial">
+"Fast delivery and amazing final result. Highly recommended."
+</div>
+
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
-<h2>Get Your Website</h2>
+
+<h2>Contact Me</h2>
 
 <form id="form">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" rows="5" placeholder="What website do you need?" required></textarea>
-  <button type="submit">Send Request</button>
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<textarea name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
+
+<button type="submit">Send Message</button>
+
+<div class="success" id="success">
+✅ Message sent successfully!
+</div>
+
 </form>
 
-<div class="success" id="success">✅ Request sent successfully!</div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-© 2026 Website Builder
+© 2026 Freelance Web Developer
 </footer>
 
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/234XXXXXXXXXX" target="_blank">
 💬 Chat
 </a>
@@ -225,22 +500,26 @@ const form = document.getElementById("form");
 const success = document.getElementById("success");
 
 form.addEventListener("submit", async (e)=>{
-  e.preventDefault();
 
-  const data = new FormData(form);
+e.preventDefault();
 
-  const res = await fetch("https://formspree.io/f/mlgzlday",{
-    method:"POST",
-    body:data,
-    headers:{Accept:"application/json"}
-  });
+const data = new FormData(form);
 
-  if(res.ok){
-    success.style.display="block";
-    form.reset();
-  } else {
-    alert("Error sending request");
+const res = await fetch("https://formspree.io/f/mlgzlday",{
+  method:"POST",
+  body:data,
+  headers:{
+    Accept:"application/json"
   }
+});
+
+if(res.ok){
+  success.style.display="block";
+  form.reset();
+}else{
+  alert("Message failed. Try again.");
+}
+
 });
 </script>
 
