@@ -3,534 +3,312 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Freelance Web Developer</title>
-
-<meta name="description" content="Professional freelance web developer website">
+<title>Joe Portfolio</title>
 
 <style>
-
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
 body{
-  font-family:Arial, sans-serif;
-  background:#0b1220;
-  color:white;
-  line-height:1.6;
+    background:#0f172a;
+    color:white;
+    transition:0.3s;
 }
 
-/* NAVIGATION */
-nav{
-  position:sticky;
-  top:0;
-  background:#111c33;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:25px;
-  padding:18px;
-  z-index:1000;
+body.light{
+    background:#f1f5f9;
+    color:#111;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    background:#111827;
+    position:sticky;
+    top:0;
+}
+
+body.light header{
+    background:white;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
 }
 
 nav a{
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  transition:0.3s;
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    transition:0.3s;
+}
+
+body.light nav a{
+    color:#111;
 }
 
 nav a:hover{
-  color:#38bdf8;
+    color:#38bdf8;
 }
 
-/* HERO */
-header{
-  text-align:center;
-  padding:100px 20px;
-  background:linear-gradient(to bottom,#111c33,#0b1220);
+.toggle-btn{
+    background:#38bdf8;
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    color:white;
+    font-weight:bold;
 }
 
-header h1{
-  font-size:50px;
-  margin-bottom:15px;
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:50px 10%;
+    gap:50px;
+    flex-wrap:wrap;
 }
 
-header p{
-  max-width:650px;
-  margin:auto;
-  color:#cbd5e1;
-  font-size:18px;
+.hero img{
+    width:300px;
+    height:300px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #38bdf8;
 }
 
-.profile-img{
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  object-fit:cover;
-  border:4px solid white;
-  margin-top:25px;
-  transition:0.3s;
+.hero-text{
+    max-width:500px;
 }
 
-.profile-img:hover{
-  transform:scale(1.05);
+.hero-text h1{
+    font-size:50px;
+    margin-bottom:15px;
 }
 
-/* BUTTONS */
-.buttons{
-  margin-top:25px;
+.hero-text span{
+    color:#38bdf8;
+}
+
+.hero-text p{
+    line-height:1.7;
+    margin-bottom:20px;
 }
 
 .btn{
-  display:inline-block;
-  padding:12px 22px;
-  margin:10px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-  transition:0.3s;
+    display:inline-block;
+    padding:12px 25px;
+    background:#38bdf8;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    margin-right:10px;
+    transition:0.3s;
 }
 
-.primary{
-  background:#38bdf8;
-  color:black;
+.btn:hover{
+    transform:scale(1.05);
 }
 
-.primary:hover{
-  background:#0ea5e9;
-}
-
-.secondary{
-  border:2px solid #38bdf8;
-  color:#38bdf8;
-}
-
-.secondary:hover{
-  background:#38bdf8;
-  color:black;
-}
-
-/* SECTIONS */
 section{
-  padding:80px 20px;
-  text-align:center;
+    padding:80px 10%;
 }
 
-section h2{
-  font-size:36px;
-  margin-bottom:30px;
+.section-title{
+    font-size:40px;
+    margin-bottom:40px;
+    text-align:center;
 }
 
-/* CARD */
-.card{
-  background:#111c33;
-  max-width:700px;
-  margin:auto;
-  padding:30px;
-  border-radius:15px;
-}
-
-/* SKILLS */
 .skills{
-  max-width:700px;
-  margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
 }
 
-.skill{
-  text-align:left;
-  margin:20px 0;
+.skill-box{
+    background:#1e293b;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
 }
 
-.bar{
-  width:100%;
-  background:#1e293b;
-  border-radius:20px;
-  overflow:hidden;
+body.light .skill-box{
+    background:white;
 }
 
-.fill{
-  padding:10px;
-  color:white;
-  font-size:14px;
-}
-
-.html{
-  width:90%;
-  background:#38bdf8;
-}
-
-.css{
-  width:85%;
-  background:#0ea5e9;
-}
-
-.js{
-  width:75%;
-  background:#0284c7;
-}
-
-/* PROJECTS */
 .projects{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
-  max-width:1100px;
-  margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
-.project{
-  background:#111c33;
-  border-radius:15px;
-  overflow:hidden;
-  transition:0.3s;
+.project-card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:15px;
 }
 
-.project:hover{
-  transform:translateY(-6px);
+body.light .project-card{
+    background:white;
 }
 
-.project img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-}
-
-.project-content{
-  padding:20px;
-}
-
-/* SERVICES */
-.services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-  max-width:1000px;
-  margin:auto;
-}
-
-.service{
-  background:#111c33;
-  padding:25px;
-  border-radius:15px;
-}
-
-/* REVIEWS */
-.testimonial{
-  background:#111c33;
-  max-width:700px;
-  margin:15px auto;
-  padding:25px;
-  border-radius:15px;
-  font-style:italic;
-}
-
-/* CONTACT */
-form{
-  max-width:600px;
-  margin:auto;
-  background:#111c33;
-  padding:30px;
-  border-radius:15px;
-}
-
-input,textarea{
-  width:100%;
-  padding:12px;
-  margin-top:12px;
-  border:none;
-  border-radius:8px;
-}
-
-button{
-  width:100%;
-  padding:12px;
-  margin-top:15px;
-  background:#38bdf8;
-  border:none;
-  border-radius:8px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-button:hover{
-  background:#0ea5e9;
-}
-
-.success{
-  display:none;
-  color:lightgreen;
-  margin-top:15px;
-}
-
-/* WHATSAPP BUTTON */
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:14px 16px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 0 10px rgba(0,0,0,0.4);
-}
-
-/* FOOTER */
 footer{
-  text-align:center;
-  padding:25px;
-  background:#111c33;
-  color:#cbd5e1;
+    text-align:center;
+    padding:30px;
+    background:#111827;
 }
 
-/* MOBILE */
+body.light footer{
+    background:white;
+}
+
 @media(max-width:768px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
 
-header h1{
-  font-size:38px;
+    .hero-text h1{
+        font-size:40px;
+    }
 }
-
-nav{
-  flex-wrap:wrap;
-  gap:15px;
-}
-
-.profile-img{
-  width:150px;
-  height:150px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<nav>
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#services">Services</a>
-  <a href="#reviews">Reviews</a>
-  <a href="#contact">Contact</a>
-</nav>
+<header>
+    <div class="logo">Joe.dev</div>
 
-<!-- HERO -->
-<header id="home">
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<h1>I Build Websites That Grow Businesses</h1>
-
-<p>
-Modern freelance web developer creating responsive,
-professional and clean websites for businesses and personal brands.
-</p>
-
-<img src="profile.JPG" class="profile-img" alt="Profile Picture">
-
-<div class="buttons">
-  <a href="#contact" class="btn primary">Hire Me</a>
-  <a href="#projects" class="btn secondary">View Projects</a>
-</div>
-
+    <button class="toggle-btn" onclick="toggleMode()">Mode</button>
 </header>
 
-<!-- ABOUT -->
-<section id="about">
+<section class="hero">
 
-<h2>About Me</h2>
+    <!-- CHANGE THIS IMAGE -->
+    <img src="yourphoto.jpg" alt="Profile Photo">
 
-<div class="card">
-I create modern, responsive and user-friendly websites for businesses,
-brands and individuals. My focus is clean design, mobile responsiveness,
-smooth user experience and professional results.
-</div>
+    <div class="hero-text">
+        <h1>Hello, I'm <span>Joe</span></h1>
+
+        <p>
+            I’m a passionate developer building modern websites,
+            creative projects, and learning new technologies every day.
+        </p>
+
+        <a href="https://wa.me/14154984256" class="btn" target="_blank">
+            WhatsApp Me
+        </a>
+
+        <a href="#projects" class="btn">
+            My Projects
+        </a>
+    </div>
 
 </section>
 
-<!-- SKILLS -->
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <p style="text-align:center; max-width:700px; margin:auto; line-height:1.8;">
+        I enjoy building websites, learning coding, and creating projects
+        that solve problems. I’m growing my portfolio and uploading my
+        work to GitHub while improving my skills every day.
+    </p>
+</section>
+
 <section id="skills">
 
-<h2>Skills</h2>
+    <h2 class="section-title">Skills</h2>
 
-<div class="skills">
+    <div class="skills">
 
-<div class="skill">
-<p>HTML</p>
-<div class="bar">
-<div class="fill html">90%</div>
-</div>
-</div>
+        <div class="skill-box">
+            HTML
+        </div>
 
-<div class="skill">
-<p>CSS</p>
-<div class="bar">
-<div class="fill css">85%</div>
-</div>
-</div>
+        <div class="skill-box">
+            CSS
+        </div>
 
-<div class="skill">
-<p>JavaScript</p>
-<div class="bar">
-<div class="fill js">75%</div>
-</div>
-</div>
+        <div class="skill-box">
+            JavaScript
+        </div>
 
-</div>
+        <div class="skill-box">
+            GitHub
+        </div>
+
+    </div>
 
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
 
-<h2>Projects</h2>
+    <h2 class="section-title">Projects</h2>
 
-<div class="projects">
+    <div class="projects">
 
-<div class="project">
-<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop">
+        <div class="project-card">
+            <h3>Portfolio Website</h3>
+            <p>A modern personal website project.</p>
+        </div>
 
-<div class="project-content">
-<h3>Business Website</h3>
-<p>Modern responsive business landing page.</p>
-</div>
-</div>
+        <div class="project-card">
+            <h3>Landing Page</h3>
+            <p>Responsive landing page for business use.</p>
+        </div>
 
-<div class="project">
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop">
+        <div class="project-card">
+            <h3>Future Project</h3>
+            <p>More projects coming soon.</p>
+        </div>
 
-<div class="project-content">
-<h3>Portfolio Website</h3>
-<p>Professional personal portfolio design.</p>
-</div>
-</div>
-
-<div class="project">
-<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop">
-
-<div class="project-content">
-<h3>Website Upgrade</h3>
-<p>Redesign and optimization project.</p>
-</div>
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<!-- SERVICES -->
-<section id="services">
-
-<h2>Services</h2>
-
-<div class="services">
-
-<div class="service">
-<h3>Business Websites</h3>
-<p>Professional websites for businesses and brands.</p>
-</div>
-
-<div class="service">
-<h3>Portfolio Websites</h3>
-<p>Showcase your skills and work professionally.</p>
-</div>
-
-<div class="service">
-<h3>Website Redesign</h3>
-<p>Fix, improve and modernize existing websites.</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- REVIEWS -->
-<section id="reviews">
-
-<h2>Client Reviews</h2>
-
-<div class="testimonial">
-"Excellent communication and amazing website design."
-</div>
-
-<div class="testimonial">
-"Very professional and delivered faster than expected."
-</div>
-
-</section>
-
-<!-- CONTACT -->
 <section id="contact">
 
-<h2>Contact Me</h2>
+    <h2 class="section-title">Contact</h2>
 
-<form id="form">
+    <p style="text-align:center;">
+        Want to work together?
+    </p>
 
-<input type="text" name="name" placeholder="Your Name" required>
-
-<input type="email" name="email" placeholder="Your Email" required>
-
-<textarea name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
-
-<button type="submit">Send Message</button>
-
-<div class="success" id="success">
-✅ Message sent successfully!
-</div>
-
-</form>
+    <div style="text-align:center; margin-top:20px;">
+        <a href="https://wa.me/14154984256" class="btn" target="_blank">
+            Chat on WhatsApp
+        </a>
+    </div>
 
 </section>
 
-<!-- FOOTER -->
 <footer>
-© 2026 Freelance Web Developer
+    <p>© 2026 Joe Portfolio | Built with HTML & CSS</p>
 </footer>
 
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://api.whatsapp.com/send?phone=14154984256" target="_blank">
-💬 Chat
-</a>
-
 <script>
-
-const form = document.getElementById("form");
-const success = document.getElementById("success");
-
-form.addEventListener("submit", async (e)=>{
-
-e.preventDefault();
-
-const data = new FormData(form);
-
-const res = await fetch("https://formspree.io/f/mlgzlday",{
-  method:"POST",
-  body:data,
-  headers:{
-    Accept:"application/json"
-  }
-});
-
-if(res.ok){
-  success.style.display="block";
-  form.reset();
-}else{
-  alert("Message failed. Try again.");
+function toggleMode(){
+    document.body.classList.toggle("light");
 }
-
-});
-
 </script>
 
 </body>
